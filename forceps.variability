@@ -1,0 +1,56 @@
+# Forceps variability file
+# 
+# Variability can be added for the following species variables:
+#   note: the variable values are kept in the range if any e.g. [1,5]
+#
+# double s; // height dbh allometry factor
+# double hmax; // m, max height
+# double amax; // years, max age
+# double g; // growth parameter
+# double ddmin; // deg, minimum sum of degree days required for growth
+# double witn; // deg, winter minimal temperature
+# double witx; // deg, winter maximal temperature for regeneration
+# double drtol; // unitless, drought tolerance index [0,1]
+# int ntol; // unitless, nitrogen tolerance index [1,5]
+# int brow; // unitless, browsing tolerance index [1,5]
+# double ly; // unitless, shade tolerance index for young trees [0,1]
+# int la; // unitless, shade tolerance index for adult trees [1,9]
+# int :; // unitless, leaf litter quality [1(fast),3(slow decaying)]
+# double immt; // time of first occurrence of the species by immigration
+# double ageMaturityForReproduction; // years, age at which a tree produces seeds
+# 
+# Variability (3 columns separated by tabs) can be expressed like below:
+#
+# column 1, spId: the identifier of the species (see forceps species file)
+# column 2, number:
+#   0  : random mode: the parameter values will be evaluated at each call of
+#        speciesManager.getGenotype (spId)
+#   >=1: number of genotypes to be evaluated and stored at init time, one of
+#        them will be returned at each call of speciesManager.getGenotype (spId)
+# column 3, encodedString: a String containing one or several  (separated by 
+#        blanks) parameters and their values, see examples below
+#   la:7 forced value for the parameter la 
+#   la:d(6,1.5)
+#        the value of la is drawn in a discrete normal distribution with mean = 6
+#        and standard deviation = 1.5, the mean and result are integers
+#   hmax:c(50.5,2.7)
+#        the value of hmax is drawn in a continous normal distribution with 
+#        mean = 50.5 and standard deviation = 2.7
+# 
+# e.g. 20 genotypes for species 17 with ntol = 2 + la and hmax values in the
+#        given distributions:
+# 17	20	ntol:2 la:d(7,2) hmax:c(70,2.5)
+# 
+# Note: if random mode lines are given for a species, all lines for the same 
+#       species with number > 0 will be ignored. If all lines for a species 
+#       have number > 0, all the matching genotypes will be added and stored
+ 
+
+#spId	number	encodedStrings
+
+#17	1	la:1
+
+17	10	la:d(7,2) hmax:c(70,2.5)
+8	10	la:d(5,1.5) hmax:25
+18	0	la:d(7,2) hmax:c(70,2.5)
+18	0	lq:2

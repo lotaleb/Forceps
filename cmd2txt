@@ -1,0 +1,11 @@
+# Forceps script command file, format SimulationCommandReader2 (Xavier Morin)									
+
+# sh capsis.sh -p script forceps.myscripts.brieuc.SimulationBrieucManagement data/forceps/BasicVersion/cmd_sansgestion_50_climRCP8.5.txt
+								
+setupFileName = forcepsBasic.setup				
+numberOfYearsToBeJumped = 10								
+exportTimeStep = 1									
+									
+#siteFileName	climateFileName	inventoryFileName	potentialSpeciesList	Scenario				
+#Bg.site	climat_Bgbas_1950-2150.bern	INV_50N_0-2-17_40-40-20(1).inv	0 2 5 17	scenario				
+forceps.site	forceps.climate.Bern	forceps.inv 	0 17	12_3_0.5_25_AAlb-50,FSyl-50;12_3_0.5_25_AAlb-80,FSyl-20;5_3_0.5_25_AAlb-80,FSyl-20;5_3_0_25_AAlb-50,FSyl-50;5_3_1_25_AAlb-90,FSyl-10

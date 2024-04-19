@@ -1,0 +1,232 @@
+# Forceps setup file
+
+siteFileName = forceps_puech.site
+
+speciesFileName = forceps2.New_species
+
+defaultClimateFileName = clim_puechabon.txt
+defaultClimateIsDaily = false
+
+bareGround = false
+bareGroundPatchN = 30
+bareGroundPatchArea = 1000
+
+inventory = true
+
+inventoryFileName = forceps.inv
+
+adaptiveMode = false
+adaptiveInputCompleteExport = inputCompleteExport.adaptive
+# adaptiveVarianceLevel: ADAPTIVE_VARIANCE_LEVEL_LOW, ADAPTIVE_VARIANCE_LEVEL_MEDIUM or ADAPTIVE_VARIANCE_LEVEL_HIGH
+adaptiveVarianceLevel = ADAPTIVE_VARIANCE_LEVEL_LOW
+# adaptiveTradeOffOption: ADAPTIVE_NO_TRADEOFF_OPTION, ADAPTIVE_TRADEOFF_DRTOL_OPTION or ADAPTIVE_TRADEOFF_G_OPTION
+adaptiveTradeOffOption = ADAPTIVE_TRADEOFF_G_OPTION
+adaptiveInventoryPatchN = 50
+adaptiveInventoryPatchArea = 800
+
+adaptiveInitial_laSd = 0
+adaptiveInitial_drtolSd = 0
+adaptiveInitial_gSd = 0
+#adaptiveInitial_laSd = 0.03
+#adaptiveInitial_drtolSd = 0.1
+#adaptiveInitial_gSd = 5
+
+adaptiveExtraVariance_drtol = 0.03
+adaptiveExtraVariance_g = 5
+
+# fc+ld-8.11.2022
+adaptiveConstantVarianceMode = false
+adaptiveConstantVariance_laSd = 0.8
+adaptiveConstantVariance_gSd = 32
+adaptiveConstantVariance_drtolSd = 0.03
+
+adaptiveMultiNormalCorrelation_g_la = 0
+adaptiveMultiNormalCorrelation_drtol_g = -0.5
+adaptiveMultiNormalCorrelation_la_drtol = 0
+
+adaptiveTreeReproductionWeight = false
+
+adaptiveReadSpeciesParametersInCompleteExport = false
+
+################### adaptive2 ###################
+
+# User must choose adaptiveMode or adaptive2Mode but not both
+
+adaptive2Mode = false
+adaptive2FileName = forcepsAdaptive2.trait
+
+
+#####################################################
+
+# fc+ld-4.1.2023
+adaptiveHeritability = 0.3
+regenerationForclimLike_withMigration = false
+# ld-3.7.2023 Added a migration multiplicator to control the number of migrant per patch each year
+migrationFactor = 1
+
+initDate = 1950
+#randomSeed = 79
+randomSeed = 98
+
+distProba = 0
+#distProba = 0.005
+
+deathProbaCoef = 0
+#deathProbaCoef = 4.605
+
+slowGrowthProba = 0
+#slowGrowthProba = 0.368
+
+slowGrowthTime = 2
+
+potentialSpeciesList = 34
+#potentialSpeciesList = 34
+#potentialSpeciesList = 2 22 17 27
+#potentialSpeciesList = 17 32 
+#potentialSpeciesList = 34
+#potentialSpeciesList = 17 23
+#potentialSpeciesList = 5 17
+
+
+# If true, trees get a real crown length
+crownLengthOption = false
+crownLengthImpactOnGrowth = false
+
+# Regeneration: one option out of these 3 must be selected
+
+regenerationMaxTreesPerPatchOption = false
+regenerationMaxTreesPerPatchNumber = 50
+regenerationMaxTreesPerPatchWithNTries = false
+regenerationMaxTreesPerPatchNTries = 5
+
+regenerationSeedlingsPerPatchOption = false
+regenerationSeedlingsPerPatchNumber = 100
+
+regenerationForclimLike = true
+
+
+# Regeneration: additional options
+
+regenerationActualSpeciesOnly = false
+regenerationActualSpeciesOnlyAtPatchLevel = false
+regenerationConstraint = true
+# fc+xm+lv-10.5.2021 added regenerationActualSpeciesOnlyAbundance
+regenerationActualSpeciesOnlyAbundance = false
+# fc+ld-24.2.2023 addedregenerationSpeciesContributionsBasedAbundance
+regenerationSpeciesContributionsBasedAbundance = false
+
+establishmentProbabilityCoef = 4.605
+
+ppMothActivated = false 
+ppMothRegionalPercentageOfInfestedTreesOption = false
+ppMothRegionalPercentageOfInfestedTrees = 0.12
+
+variability = false
+variabilityFileName = forceps.fitnessVariability
+
+climaticFitness = false
+fitnessImpactsGrowth = false
+
+management = false
+managementFileName = forceps.management
+
+droughtStressOption = FORCLIM_LIKE_DROUGHT_STRESS
+#droughtStressOption = PATCH_LEVEL_DROUGHT_STRESS
+
+phenofitActivated = false
+
+leafLossImpactOnGrowthFactor = 0
+frostLeafLossImpactOnLAI = false
+
+reproductiveSuccessImpactOnRege = false
+
+
+# Extra options
+canopyLayerThickness = 1
+
+crownA1ReversionFactor = 0.05
+
+variableAllometry = false
+
+treeHeightFromInventory = false
+
+conicalCanopyShadows = false
+
+equilibriumInitialCanopy = false
+
+equilibriumError = 0.05
+
+layeredCrownAndHeightPlasticityCalculation = false
+
+speciesCrownShapeParameters = false
+
+speciesSpecificLeafArea = false
+
+densityDependentLightAttenuation = false
+
+leafPhenologyImpactOnLightCompetition = false
+leafPhenologyImpactOnLightCompetition_GDDweights = false
+
+percentOfRainExclusion = 0 
+
+# deadWoodModule
+deadWoodActivated = false
+
+yassoActivated = false
+yassoParametersFileName = yassoParameters.txt
+
+canopyStructureMemory = false
+microClimateActivated = false
+
+# Options for Sureau linking
+
+sureauActivated = false
+
+sureauSoilParametersFileName = SurEauSoilParameters_puech.txt
+
+sureauExplicitScheme = False
+
+sureauSmallTimeStep = 1200
+
+sureauTimeStep = 1
+
+sureauClassNbPerSpecies = 3
+
+sureauMortalityModule = false
+
+sureauGrowthModule = false
+
+# WRITING_FREQUENCY_YEAR, WRITING_FREQUENCY_DAY or a number of seconds
+sureauWritingFrequency = 3600
+
+yearToYearPLC = false
+
+growthToCavitationRepairConversionFactor = 1
+
+droughtInducedDefoliation = false
+
+droughtInducedDefoliationImpactOnGrowth = false 
+
+droughtInducedDefoliationImpactOnLightCompetition = false
+
+explicitRootLength = false
+rootLengthPlasticity = false
+
+droughtInducedDefoliationInitialization = false
+
+cavitationMortalityTresholdPercentage = 0
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
